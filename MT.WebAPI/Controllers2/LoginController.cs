@@ -21,7 +21,7 @@ namespace MT.WebAPI.Controllers
         public IActionResult GetToken(AuthenticateRequest user)
         {
             var response = _userService.Authenticate(user);
-
+            // thử change
             if (response == null)
                 return BadRequest(new { message = "Username or password is incorrect" });
 
