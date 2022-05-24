@@ -58,7 +58,7 @@ namespace MT.Repository.UserRepo
                 string hashPass = BCrypt.Net.BCrypt.HashPassword(userEntity.Password, salt);
                 userEntity.Password = hashPass;
                 userEntity.PasswordSalt = salt;
-
+                
                 _userContext.Users.Add(userEntity);
                 _userContext.SaveChanges();
                 return true;

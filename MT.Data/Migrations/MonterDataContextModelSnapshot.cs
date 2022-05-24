@@ -19,7 +19,7 @@ namespace MT.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("AuthorityDtoUser", b =>
+            modelBuilder.Entity("AuthorityUser", b =>
                 {
                     b.Property<Guid>("AuthoritiesID")
                         .HasColumnType("uniqueidentifier");
@@ -31,7 +31,7 @@ namespace MT.Data.Migrations
 
                     b.HasIndex("UsersId");
 
-                    b.ToTable("AuthorityDtoUser");
+                    b.ToTable("AuthorityUser");
                 });
 
             modelBuilder.Entity("MT.Data.Models.Attribute", b =>
@@ -56,14 +56,14 @@ namespace MT.Data.Migrations
                     b.ToTable("Attributes");
                 });
 
-            modelBuilder.Entity("MT.Data.Models.AuthorityDto", b =>
+            modelBuilder.Entity("MT.Data.Models.Authority", b =>
                 {
                     b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("Code")
-                        .HasColumnType("int");
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -203,9 +203,9 @@ namespace MT.Data.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("AuthorityDtoUser", b =>
+            modelBuilder.Entity("AuthorityUser", b =>
                 {
-                    b.HasOne("MT.Data.Models.AuthorityDto", null)
+                    b.HasOne("MT.Data.Models.Authority", null)
                         .WithMany()
                         .HasForeignKey("AuthoritiesID")
                         .OnDelete(DeleteBehavior.Cascade)

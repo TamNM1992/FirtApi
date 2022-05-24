@@ -1,11 +1,7 @@
 ﻿using AutoMapper;
 using MT.Data.Dtos;
 using MT.Repository.AttributeRepo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace MT.Service.AttributeServices
 {

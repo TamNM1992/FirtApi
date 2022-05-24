@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace MT.Data.Models
 {
-    public class AuthorityDto
+    public class Authority
     {
         public Guid ID { get; set; }
-        public int Code { get; set; }
+        public string Code { get; set; }
         public string Description { get; set; }
-
+        public Authority()
+        {
+            this.Users = new HashSet<User>();
+        }
         public virtual ICollection<User> Users { get; set; }
 
     }

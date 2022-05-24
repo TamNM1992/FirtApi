@@ -21,6 +21,9 @@ namespace MT.WebAPI.Configurations
             CreateMap<TypeSkillDto, TypeSkill>().ReverseMap();
             CreateMap<User, UserDto>().ReverseMap();
             CreateMap<UserDto, User>().ReverseMap();
+            CreateMap<Authority, AuthorityDto>().ReverseMap();
+            CreateMap<AuthorityDto, Authority>().ReverseMap();
+
 
         }
     }

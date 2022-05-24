@@ -7,11 +7,15 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using MT.Data.Models;
 using MT.Repository.AttributeRepo;
+using MT.Repository.AuthorityRepo;
+using MT.Repository.AuthUserRepo;
 using MT.Repository.MonterRepo;
 using MT.Repository.SkillRepo;
 using MT.Repository.TypeRepo;
 using MT.Repository.UserRepo;
 using MT.Service.AttributeServices;
+using MT.Service.AuthorityServices;
+using MT.Service.AuthUserServices;
 using MT.Service.MonterServices;
 using MT.Service.SkillServices;
 using MT.Service.TypeServices;
@@ -45,7 +49,8 @@ namespace MT.WebAPI
             services.AddScoped<ISkillService, SkillService>();
             services.AddScoped<IMonterService, MonterService>();
             services.AddScoped<IUserService, UserService>();
-            //services.AddScoped<AppSettings, AppSettings>();
+            services.AddScoped<IAuthorityService, AuthorityService>();
+            services.AddScoped<IAuthUserService, AuthUserService>();
 
 
 
@@ -55,6 +60,8 @@ namespace MT.WebAPI
             services.AddScoped<ITypeRepository, TypeRepository>();
             services.AddScoped<ISkillRepository, SkillRepository>();
             services.AddScoped<IMonterRepository, MonterRepository>();
+            services.AddScoped<IAuthorityRepository, AuthorityRepository>();
+            services.AddScoped<IAuthUserRepository, AuthUserRepository>();
 
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
