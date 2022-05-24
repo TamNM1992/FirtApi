@@ -13,15 +13,6 @@ namespace MT.Service.UserService
     public class UserService : IUserService
     {
         private IUserRepository _userRepository;
-        //private readonly AppSettings _appSettings;
-
-        // users hardcoded for simplicity, store in a db with hashed passwords in production applications
-        //private List<User> _users = new List<User>
-        //{
-        //    new User { Id = Guid.NewGuid(), FullName = "Test", Email = "gg@gmail.com", UserName = "cr7", Password = "m10", IsActive = true }
-        //};
-
-        //private readonly AppSettings _appSettings;
 
         public UserService(IUserRepository userRepository)
         {
@@ -40,11 +31,9 @@ namespace MT.Service.UserService
                 string salt = _userRepository.GetPasswordSalt(userName);
                 string hashPass = BCrypt.Net.BCrypt.HashPassword(password,salt);
                 string pass = _userRepository.GetPasswordHash(userName);
-                //var isUsernamePasswordValid = BCrypt.Net.BCrypt.Verify(pass, hashPass);
                 if(pass == hashPass)
                     return true;
                 return false;
-                //return isUsernamePasswordValid;
             }
             catch (Exception ex)
             {

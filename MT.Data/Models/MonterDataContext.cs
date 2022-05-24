@@ -19,5 +19,6 @@ namespace MT.Data.Models
         public DbSet<Skill> Skills { get; set; }
         public DbSet<Type> Types { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<AuthorityDto> Authorities { get; set; }
     }
 }

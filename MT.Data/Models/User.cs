@@ -26,5 +26,7 @@ namespace MT.Data.Models
         [MaxLength(200)]
         public string Email { get; set; }
         public bool IsActive { get; set; }
+
+        public virtual ICollection<AuthorityDto> Authorities { get; set; }
     }
 }

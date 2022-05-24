@@ -4,14 +4,16 @@ using MT.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MT.Data.Migrations
 {
     [DbContext(typeof(MonterDataContext))]
-    partial class MonterDataContextModelSnapshot : ModelSnapshot
+    [Migration("20220524064656_monteryg16")]
+    partial class monteryg16
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
