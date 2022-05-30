@@ -13,6 +13,7 @@ namespace MT.Repository.UserRepo
         public AuthenticateResponse Authenticate(AuthenticateRequest model);
         public IEnumerable<User> GetAll();
         public User GetById(Guid id);
+        public User GetByUserName(string username);
         public bool AddUser(UserDto user);
         public string GetPasswordHash(string userName);
         public string GetPasswordSalt(string userName);

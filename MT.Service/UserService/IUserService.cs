@@ -13,6 +13,7 @@ namespace MT.Service.UserService
             AuthenticateResponse Authenticate(AuthenticateRequest model);
             IEnumerable<User> GetAll();
             User GetById(Guid id);
+        public User GetByUserName(string username);
             public bool AddUser(UserDto user);
             public bool ValidateAccount(string userName, string password);
     }

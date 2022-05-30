@@ -65,6 +65,12 @@ namespace MT.Service.UserService
             return temp;
         }
 
+        public User GetByUserName(string username)
+        {
+            var temp = _userRepository.GetByUserName(username);
+            return temp;
+        }
+
 
     }
 }

@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Options;
@@ -33,12 +33,14 @@ namespace MT.Service.UserService
 
         public JwtMiddleware(RequestDelegate next, IOptions<AppSettings> appSettings)
         {
+            // lúc dăng kí tì nó nhảy vào đây
             _next = next;
             _appSettings = appSettings.Value;
         }
 
         public async Task Invoke(HttpContext context, IUserService userService)
         {
+             // mỗi request sau này nó nhảy vào đây tiền xử lý
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
 
             if (token != null)

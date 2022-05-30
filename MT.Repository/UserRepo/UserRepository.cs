@@ -35,7 +35,11 @@ namespace MT.Repository.UserRepo
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()) }),
+                Subject = new ClaimsIdentity(new[] 
+                {
+                    new Claim("id", user.Id.ToString()),
+                    new Claim("userName", user.FullName)
+                }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
@@ -105,5 +109,9 @@ namespace MT.Repository.UserRepo
             return _userContext.Users.FirstOrDefault(x => x.Id == id);
         }
 
+        public User GetByUserName(string username)
+        {
+            return _userContext.Users.FirstOrDefault(x => x.UserName == username);
+        }
     }
 }

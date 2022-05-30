@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Options;
 using MT.Data.Dtos;
 using MT.Data.Models;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace MT.Repository.AuthorityRepo
@@ -28,6 +30,12 @@ namespace MT.Repository.AuthorityRepo
                 return true;
             }
             return false;
+        }
+
+        public IEnumerable<Authority> GetAuthorityByUser(Guid user)
+        {
+            var authorities = _authorityContext.Users.Where(x => x.Id == user).SelectMany(x => x.Authorities);
+            return authorities;
         }
 
     }

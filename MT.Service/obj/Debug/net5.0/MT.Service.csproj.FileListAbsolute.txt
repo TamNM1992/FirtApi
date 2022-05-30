@@ -38,3 +38,5 @@ D:\Git\FirtApi\MT.Service\obj\Debug\net5.0\refint\MT.Service.dll
 D:\Git\FirtApi\MT.Service\obj\Debug\net5.0\MT.Service.pdb
 D:\Git\FirtApi\MT.Service\obj\Debug\net5.0\MT.Service.genruntimeconfig.cache
 D:\Git\FirtApi\MT.Service\obj\Debug\net5.0\ref\MT.Service.dll
+D:\Git\FirtApi\MT.Service\bin\Debug\net5.0\MT.Common.dll
+D:\Git\FirtApi\MT.Service\bin\Debug\net5.0\MT.Common.pdb

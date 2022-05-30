@@ -1522,6 +1522,20 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "MT.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AutoMapper": "11.0.1",
+          "MT.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MT.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MT.Common.dll": {}
+        }
+      },
       "MT.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -5781,6 +5795,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "MT.Common/1.0.0": {
+      "type": "project",
+      "path": "../MT.Common/MT.Common.csproj",
+      "msbuildProject": "../MT.Common/MT.Common.csproj"
+    },
     "MT.Data/1.0.0": {
       "type": "project",
       "path": "../MT.Data/MT.Data.csproj",
@@ -5796,6 +5815,7 @@
     "net5.0": [
       "BCrypt.Net-Next >= 4.0.3",
       "EntityFramework >= 6.4.4",
+      "MT.Common >= 1.0.0",
       "MT.Repository >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0",
@@ -5829,6 +5849,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "D:\\Git\\FirtApi\\MT.Common\\MT.Common.csproj": {
+              "projectPath": "D:\\Git\\FirtApi\\MT.Common\\MT.Common.csproj"
+            },
             "D:\\Git\\FirtApi\\MT.Repository\\MT.Repository.csproj": {
               "projectPath": "D:\\Git\\FirtApi\\MT.Repository\\MT.Repository.csproj"
             }

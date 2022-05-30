@@ -21,6 +21,7 @@ using MT.Service.SkillServices;
 using MT.Service.TypeServices;
 using MT.Service.UserService;
 using MT.WebAPI.Configurations;
+using MT.WebAPI.Providers;
 
 namespace MT.WebAPI
 {
@@ -43,6 +44,7 @@ namespace MT.WebAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MT.WebAPI", Version = "v1" });
             });
             services.AddCommonServices();
+            services.AddHttpContextAccessor();
             //service
             services.AddScoped<IAttributeService, AttributeService>();
             services.AddScoped<ITypeService, TypeService>();
@@ -51,8 +53,6 @@ namespace MT.WebAPI
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthorityService, AuthorityService>();
             services.AddScoped<IAuthUserService, AuthUserService>();
-
-
 
             //repo
             services.AddScoped<IUserRepository, UserRepository>();
@@ -74,6 +74,7 @@ namespace MT.WebAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            StaticServiceProvider.Provider = app.ApplicationServices;
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -92,6 +93,8 @@ namespace MT.WebAPI
                 .AllowAnyHeader());
 
             app.UseMiddleware<JwtMiddleware>();
+            //app.UseMiddleware<JwtMiddleware2>();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

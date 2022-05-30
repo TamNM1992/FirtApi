@@ -24,4 +24,8 @@
     <ProjectReference Include="..\MT.Service\MT.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="MidleWare\" />
+  </ItemGroup>
+
 </Project>

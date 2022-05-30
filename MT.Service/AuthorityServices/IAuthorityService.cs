@@ -1,4 +1,5 @@
-﻿using MT.Data.Dtos;
+﻿using MT.Common.Enums;
+using MT.Data.Dtos;
 using MT.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -11,5 +12,6 @@ namespace MT.Service.AuthorityServices
     public interface IAuthorityService
     {
         public bool AddAuthority(AuthorityDto authorityDto);
+        bool CheckUserRole(Role[] roles, Guid userId);
     }
 }
